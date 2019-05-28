@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isLoading = false;
     private boolean isMaxData = false;
     private int ITEM_LOAD_COUNT = 5;
-
+    ProgressBar progressBar;
     FirebaseAuth mAuth;
 
     ProgressDialog progressDialog;
@@ -72,8 +72,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
 
-        progressDialog = new ProgressDialog(MainActivity.this);
-        progressDialog.show();
+        progressBar = (ProgressBar)findViewById(R.id.progressbar);
+
         mRV = findViewById(R.id.recyclerView);
 
         final LinearLayoutManager mLayoutManager = new LinearLayoutManager(this);
@@ -111,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getPosts(String nodeId) {
         Query query;
+        progressBar.setVisibility(View.VISIBLE);
 
         if (nodeId == null)
             query = FirebaseDatabase.getInstance().getReference()
@@ -127,18 +128,24 @@ public class MainActivity extends AppCompatActivity {
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                Post post;
-                List<Post> postList = new ArrayList<>();
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    post = postSnapshot.getValue(Post.class);
-                    String postId = postSnapshot.getKey();
-                    post.setId(postId);
-                    postList.add(post);
+
+                if(dataSnapshot.hasChildren()){
+                    Post post;
+                    List<Post> postList = new ArrayList<>();
+                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                        post = postSnapshot.getValue(Post.class);
+                        String postId = postSnapshot.getKey();
+                        post.setId(postId);
+                        postList.add(post);
+                    }
+
+                    mAdapter.addAll(postList);
+                    progressBar.setVisibility(View.GONE);
+                }else{
+                    isLoading=false;
+                    progressBar.setVisibility(View.GONE);
                 }
 
-                mAdapter.addAll(postList);
-                isLoading = false;
-                progressDialog.dismiss();
             }
 
             @Override
