@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegisterActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+              <android.support.v7.widget.CardView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  app:cardUseCompatPadding="true"
+                  android:padding="5dp"
+                  app:cardElevation="@dimen/cardview_margin_4"
+                  app:cardCornerRadius="@dimen/cardview_margin_4">
+                  <LinearLayout
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:orientation="vertical">
+                      <EditText
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="Full Name"
+                          android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ ."
+                          android:inputType="textPersonName"
+                          android:id="@+id/user_name"/>
+                      <EditText
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="Email"
+                           android:layout_marginTop="8dp"
+                           android:inputType="textEmailAddress"
+                          android:id="@+id/user_email"/>
+                       <EditText
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="Mobile"
+                           android:layout_marginTop="8dp"
+                           android:inputType="phone"
+                           android:digits="0123456789"
+                          android:id="@+id/user_mobile"/>
+                      <EditText
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:hint="Password"
+                           android:layout_marginTop="8dp"
+                           android:inputType="textPassword"
+                          android:id="@+id/user_password"/>
+
+                      <Button
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:text="Save"
+                          android:layout_marginTop="10dp"
+                          android:onClick="onSaveClicked"/>
+                  </LinearLayout>
+              </android.support.v7.widget.CardView>
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:onClick="onSignInClicked"
+                 android:padding="10dp"
+                 android:text="Already Register? Please Login"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
