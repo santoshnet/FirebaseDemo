@@ -1,9 +1,7 @@
 package com.quintus.labs.firebasedemo.activity;
 
 
-import android.app.Dialog;
 import android.arch.paging.PagedList;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,10 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -28,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.quintus.labs.firebasedemo.R;
 import com.quintus.labs.firebasedemo.model.Post;
 import com.quintus.labs.firebasedemo.utils.LocalStorage;
+import com.quintus.labs.firebasedemo.view_holder.PostViewHolder;
 import com.shreyaspatil.firebase.recyclerpagination.DatabasePagingOptions;
 import com.shreyaspatil.firebase.recyclerpagination.FirebaseRecyclerPagingAdapter;
 import com.shreyaspatil.firebase.recyclerpagination.LoadingState;

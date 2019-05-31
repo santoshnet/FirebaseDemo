@@ -57,13 +57,11 @@
                 android:layout_height="50dp"
                 android:background="#00000000"
                 android:paddingLeft="10dp"
-
                 android:hint="email"
                 android:id="@+id/editTextEmail"
                 android:text="santoshnet2016@gmail.com  "
                 android:inputType="textEmailAddress"
                 android:textColor="#fff"
-
                 android:textColorHint="#fff"
                 android:drawablePadding="10dp"
                 android:textSize="13dp"

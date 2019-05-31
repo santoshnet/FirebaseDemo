@@ -13,6 +13,7 @@ public class Post {
     public String author;
     public String title;
     public String body;
+    public String image;
 
 
 
@@ -20,19 +21,13 @@ public class Post {
         // Default constructor required for calls to DataSnapshot.getValue(Post.class)
     }
 
-    public Post(String id,String uid, String author, String title, String body) {
-        this.id = id;
-        this.uid = uid;
-        this.author = author;
-        this.title = title;
-        this.body = body;
-    }
 
-    public Post(String id, String author, String title, String body) {
+    public Post(String id, String author, String title, String body, String image) {
         this.id = id;
         this.author = author;
         this.title = title;
         this.body = body;
+        this.image = image;
     }
 
     public String getId() {
@@ -85,6 +80,7 @@ public class Post {
         result.put("author", author);
         result.put("title", title);
         result.put("body", body);
+        result.put("image", image);
         return result;
     }
 }
