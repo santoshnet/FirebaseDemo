@@ -27,6 +27,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:hint="email"
+                android:text="santoshnet2016@gmail.com  "
                 android:inputType="textEmailAddress"
                 android:paddingBottom="15dp" />
 
@@ -36,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif"
                 android:hint="password"
+                android:text="@string/password"
                 android:inputType="textPassword"
                 android:paddingBottom="15dp" />
 

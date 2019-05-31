@@ -1,6 +1,7 @@
 package com.quintus.labs.firebasedemo.activity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -119,5 +120,7 @@ public class NewPostActivity extends AppCompatActivity {
         childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
 
         mDatabase.updateChildren(childUpdates);
+        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        finish();
     }
 }
