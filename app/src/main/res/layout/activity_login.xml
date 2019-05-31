@@ -4,12 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/uikitbgclear">
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/transparent"
-        android:scaleType="fitXY"
-        />
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@drawable/transparent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/logo"
@@ -26,8 +28,7 @@
         android:text="Login"
         android:textSize="40dp"
         android:textColor="#fff"
-        android:gravity="center"
-        android:layout_marginTop="70dp"/>
+        android:gravity="center" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -144,7 +145,7 @@
                 android:textColor="#FFF"
                 android:gravity="end"/>
         </LinearLayout>
-
-
     </LinearLayout>
+   </RelativeLayout>
+  </ScrollView>
 </RelativeLayout>

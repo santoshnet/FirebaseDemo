@@ -4,40 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/uikitblur">
-    <ImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/transparent"
-        android:scaleType="fitXY"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@drawable/transparent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        />
-    <ImageView
+        <ImageView
         android:id="@+id/logo"
         android:layout_width="90dp"
         android:layout_height="90dp"
         android:src="@drawable/green"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"/>
-    <TextView
-        android:id="@+id/holliday"
-        android:layout_below="@+id/logo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:textSize="30dp"
-        android:textColor="#fff"
-        android:gravity="center"
-
-        />
-    <com.quintus.labs.firebasedemo.custom_font.MyTextView
-        android:layout_above="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:gravity="center"
-        android:textColor="#fff"
-        android:textSize="20dp"
-        android:layout_marginBottom="50dp"/>
 
     <LinearLayout
         android:id="@+id/main"
@@ -219,8 +201,9 @@
                 android:gravity="end"/>
         </LinearLayout>
 
-
-    </LinearLayout>
+     </LinearLayout>
+    </RelativeLayout>
+  </ScrollView>
 </RelativeLayout>
 
 
